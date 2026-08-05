@@ -7,15 +7,9 @@ class Solution {
             if(nums[i]>0) pos.add(nums[i]);
             else neg.add(nums[i]);
         }
-        int j=0;
-        for(int i=0;i<n;i=i+2){
-            nums[i]=pos.get(j);
-            j++;
-        }
-        int k=0;
-        for(int i=1;i<n;i=i+2){
-            nums[i]=neg.get(k);
-            k++;
+        for(int i=0;i<n/2;i++){
+            nums[2*i]=pos.get(i);
+            nums[2*i+1]=neg.get(i);
         }
         return nums;
     }
